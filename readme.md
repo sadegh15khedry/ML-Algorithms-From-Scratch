@@ -1,4 +1,4 @@
-# ML-Algorithms-from-scratch
+# ML Algorithms from scratch
 
 Welcome to the **ML-Algorithms-from-scratch** repository! This project is dedicated to implementing various machine learning algorithms from scratch to gain a deeper understanding of how they work.
 
