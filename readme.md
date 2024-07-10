@@ -33,20 +33,19 @@ Machine learning is a field of computer science that gives computers the ability
 
 To get started with this repository, clone it to your local machine:
 ```bash
-git clone https://github.com/yourusername/ML-Algorithms-from-scratch.git
-cd ML-Algorithms-from-scratch
+git clone https://github.com/yourusername/ML-Algorithms-From-Scratch.git
+cd ML-Algorithms-From-Scratch
+```
+Create and activate a conda environment:
+
+```bash
+ conda env create -f environment.yml
+ conda activate ml-projects
 ```
 
-Create and activate a virtual environment:
-```bash
-python -m venv env
-source env/bin/activate  # On Windows use `env\Scripts\activate`
-```
+ML-Algorithms-From-Scratch
 
-Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
+Use each project using the installation guide provided in the project's folder.
 
 ## Usage
 
