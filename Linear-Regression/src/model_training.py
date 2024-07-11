@@ -1,8 +1,17 @@
-from sklearn.ensemble import RandomForestRegressor 
+from sklearn.linear_model import LinearRegression 
+
+from linear_regression import CustomLinearRegression
 
 
-def train_model(x_train, y_train, estimators=100):
-    model = RandomForestRegressor (n_estimators=estimators, random_state=50)
-    model.fit(x_train, y_train)
-    return model
+def train_model(x_train, y_train, number_of_iterations, learning_rate, model_type='custom'):
+    if model_type == 'custom':
+        model = CustomLinearRegression(number_of_iterations, learning_rate)
+        
+    elif model_type == 'sklearn':
+        model = LinearRegression ()
+        model.fit(x_train, y_train)
+        return model
+
+
+
 
