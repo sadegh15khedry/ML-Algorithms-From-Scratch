@@ -48,45 +48,6 @@ Open the notebook you are interested in and run the cells to see the algorithm i
 
 ## Project Structure
 
-ML-Algorithms-from-scratch/
-├── linear_regression/
-│ ├── linear_regression.py
-│ └── linear_regression.ipynb
-├── logistic_regression/
-│ ├── logistic_regression.py
-│ └── logistic_regression.ipynb
-├── knn/
-│ ├── knn.py
-│ └── knn.ipynb
-├── decision_tree/
-│ ├── decision_tree.py
-│ └── decision_tree.ipynb
-├── random_forest/
-│ ├── random_forest.py
-│ └── random_forest.ipynb
-├── svm/
-│ ├── svm.py
-│ └── svm.ipynb
-├── k_means/
-│ ├── k_means.py
-│ └── k_means.ipynb
-├── pca/
-│ ├── pca.py
-│ └── pca.ipynb
-├── neural_network/
-│ ├── neural_network.py
-│ └── neural_network.ipynb
-├── data/
-│ └── (datasets used for testing algorithms)
-├── docs/
-│ └── (documentation files)
-├── notebooks/
-│ └── (additional Jupyter notebooks)
-├── results/
-│ └── (results of experiments)
-├── requirements.txt
-└── README.md
-
 
 ## Contributing
 
