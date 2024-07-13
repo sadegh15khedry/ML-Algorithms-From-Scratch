@@ -1,2 +1,2 @@
-# Titanic-Survival-Prediction
-Predicting Titanic survival using neural networks.
+# Logestic Regression From The Scatch
+
