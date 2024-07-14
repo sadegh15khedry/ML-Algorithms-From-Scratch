@@ -160,6 +160,10 @@ cython_debug/
 
 # Models
 model/
+Linear-Regression/datasets/*.csv
+Logestic-Regression/datasets/*.csv
+
+datasets/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

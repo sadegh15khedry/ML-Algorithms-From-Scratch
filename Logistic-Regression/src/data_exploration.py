@@ -9,12 +9,12 @@ from sklearn.feature_extraction.text import CountVectorizer
 from wordcloud import WordCloud
 from textblob import TextBlob
 
-def plot_correlation_matrix(correlation_matrix):
-    plt.figure(figsize=(10, 8))
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
-    plt.title('Correlation Matrix Heatmap')
-    plt.savefig('../results/correlation_matrix.png')
-    plt.show()
+# def plot_correlation_matrix(correlation_matrix):
+#     plt.figure(figsize=(10, 8))
+#     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
+#     plt.title('Correlation Matrix Heatmap')
+#     plt.savefig('../results/correlation_matrix.png')
+#     plt.show()
     
 def display_text_size(df):
     # Histogram of text length
@@ -119,15 +119,11 @@ def explore_sentiment(df, text_column):
     plt.savefig('../results/sentiment.png')
     plt.show()
     
-# Correlation matrix
-# def display_correlation_matrix(df):
-#     correlation_matrix = df.corr()
-#     print(correlation_matrix)
-
-#     # Heatmap of the correlation matrix
-
-
-#     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
-#     plt.title('Correlation Matrix')
-#     plt.savefig
-#     plt.show()
+#Correlation matrix
+def display_correlation_matrix(df):
+    correlation_matrix = df.corr()
+    print(correlation_matrix)
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+    plt.title('Correlation Matrix')
+    plt.savefig
+    plt.show()
