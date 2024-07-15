@@ -153,7 +153,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 
 ## Acknowledgments
 
-- This project is based AssemblyAI video on logestic regression implementation from scratch. You can use the fallowing link ([https://www.youtube.com/watch?v=ltXSoduiVwY](https://www.youtube.com/watch?v=YYEJ_GUguHw&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=4)) to see their video on this project. 
+- This project is based AssemblyAI video on logestic regression implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=YYEJ_GUguHw&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=4)) to see their video on this project. 
 - Special thanks to the developers and contributors the libraries used in this project, including NumPy, pandas, scikit-learn, Seaborn, and Matplotlib.
 - Huge thaks to contributors of the  Spam email Dataset.
 
