@@ -4,11 +4,7 @@ import joblib
 import cv2
 import os
 import numpy as np
-from tensorflow.keras.models import load_model
-import tensorflow as tf
 from PIL import Image
-import tensorflow as tf
-
 
  
 def save_report(report, file_path):

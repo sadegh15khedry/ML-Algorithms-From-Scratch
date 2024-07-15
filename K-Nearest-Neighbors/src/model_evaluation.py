@@ -1,5 +1,4 @@
 from sklearn.metrics import confusion_matrix, classification_report, f1_score, precision_score, recall_score
-import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
