@@ -28,7 +28,7 @@ This project utilizes a Linear Regressor model that has been built from the scra
 This project is focused on implementing a custom linear regression model and comparing it with the standard scikit-learn linear regression model. The project includes data preprocessing, model training, and evaluation phases using the Boston Housing dataset.
 
 ## Directory Structure
-
+```
 ├── src
 │ ├── utils.py
 │ ├── model_training.py
@@ -46,7 +46,7 @@ This project is focused on implementing a custom linear regression model and com
 │ └── model_sklearn.joblib
 ├── environment.yml
 └── README.md
-
+```
 ## Files and Functions
 
 ### utils.py
