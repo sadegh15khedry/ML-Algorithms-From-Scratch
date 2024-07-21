@@ -14,7 +14,7 @@ This project utilizes a KNN model that has been built from the scratch to classi
   - [utils.py](#utilspy)
   - [model_training.py](#model_trainingpy)
   - [model_evaluation.py](#model_evaluationpy)
-  - [linear_regression.py](#linear_regressionpy)
+  - [k_nearest_neighbors.py](#k_nearest_neighborspy)
   - [data_preprocessing.py](#data_preprocessingpy)
   - [data_exploration.py](#data_explorationpy)
   - [Notebooks](#notebooks)
