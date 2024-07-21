@@ -5,7 +5,8 @@ import cv2
 import os
 import numpy as np
 from PIL import Image
-
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, mean_squared_error
+from sklearn.preprocessing import MultiLabelBinarizer
  
 def save_report(report, file_path):
     with open(file_path, 'w') as f:
@@ -19,13 +20,7 @@ def save_dataframe_as_csv(df, file_path):
 def save_model(model, path):
     model.save(path)
 
-def load_saved_model(path):
-    try:
-        model = tf.keras.models.load_model(path)
-        return model
-    except Exception as e:
-        print(f"Error loading model: {e}")
-        return None
+
     
 
 def load_image(image_directory):
@@ -94,22 +89,60 @@ def save_images(data, labels, folder):
         path = folder + '/' + str(label)+ '/' + str(label) + '_'+ str(i)+'.png'
         img = Image.fromarray(image)
         img.save(path)
-
-     
-def download_splited_minst_dataset():        
-    # Load the MNIST dataset
-    mnist = tf.keras.datasets.mnist
-    (x_train, y_train), (x_test, y_test) = mnist.load_data()
-
-    # Concatenate train and test data
-    x_all = np.concatenate((x_train, x_test))
-    y_all = np.concatenate((y_train, y_test))
-
-    # Save all images
-    save_images(x_all, y_all, "../datasets/mnist_all")
-
-    print("MNIST images saved successfully.")
+ 
     
-def check_tensorflow():
-    #making sure the gpu is available
-    print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+    
+    
+def get_error(y_train, y_pred_train):
+    return mean_squared_error(y_train, y_pred_train)   
+
+def get_accuracy(y_test, y_pred):
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Accuracy: {accuracy:.2f}")
+    precision = precision_score(y_test, y_pred, average='weighted')
+    print(f"Precision: {precision:.2f}")
+    recall = recall_score(y_test, y_pred, average='weighted')
+    print(f"Recall: {recall:.2f}")
+    f1 = f1_score(y_test, y_pred, average='weighted')
+    print(f"F1 Score: {f1:.2f}")
+    
+    
+    
+def get_image_dataset(dir, image_width, image_height, labels):
+    # Initialize lists to hold image data and labels
+    images = []
+    images_label = []
+    
+    # Loop over each directory (which represents a label)
+    for label in labels:
+        label_dir = dir + label
+        for file_name in os.listdir(label_dir):
+            # Load the image
+            image_path = os.path.join(label_dir, file_name)
+            image = Image.open(image_path).convert('L')  # Convert to grayscale
+            
+            # Resize to 28x28 (if necessary)
+            image = image.resize((image_width, image_height))
+            
+            # Convert the image to a numpy array and flatten it
+            image_array = np.array(image).flatten()
+            
+            # Append the image array and label to lists
+            images.append(image_array)
+            images_label.append(label)
+
+    # Convert lists to numpy arrays
+    print(len(images_label))
+
+    x = np.array(images)
+    y = np.array(images_label)
+
+    # Split the data into training and test sets
+    # x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    return x, y
+
+
+def convert_to_binary_format(y):
+    mlb = MultiLabelBinarizer()
+    y_binary = mlb.fit_transform(y)
+    return y_binary, mlb

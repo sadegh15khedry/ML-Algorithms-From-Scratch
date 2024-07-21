@@ -7,9 +7,8 @@ def euclidean_distance(x1, x2):
 
 
 class CustomKNN:
-    def __init(self, k):
+    def __init__(self, k):
         self.k = k
-        
         
         
     def fit(self, x, y):
@@ -24,7 +23,7 @@ class CustomKNN:
     
     def _predict(self, x):
         # Computing the distances
-        distances = [euclidean_distance(i) for i in self.x_train]
+        distances = [euclidean_distance(x, i) for i in self.x_train]
         
         # Getting the closest k
         k_indices = np.argsort(distances)[:self.k]
