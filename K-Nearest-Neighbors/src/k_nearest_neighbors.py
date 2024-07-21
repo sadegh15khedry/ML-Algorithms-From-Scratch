@@ -21,12 +21,10 @@ class CustomKNN:
         
         for i in range(x.shape[0]):
             p = self._predict(x[i])
-            # print(p)
             predictions.append(p)
             y_pred = []
             
             for item in predictions:
-                print(item[0][0])
                 y_pred.append(item[0][0])
                 
         return predictions, y_pred
