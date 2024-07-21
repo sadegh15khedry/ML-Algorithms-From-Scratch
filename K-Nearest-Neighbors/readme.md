@@ -103,7 +103,21 @@ The dataset used is minst Dataset.
 
 ## Model Performance
 
-this section will be added
+### sklearn model train results: 
+
+Accuracy: 0.80
+Precision: 0.84
+Recall: 0.80
+F1 Score: 0.80
+
+
+### custom model train results:
+
+Accuracy: 0.93
+Precision: 0.95
+Recall: 0.93
+F1 Score: 0.93
+
 
 ## Installation Guide
 
