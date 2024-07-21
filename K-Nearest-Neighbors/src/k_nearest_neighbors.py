@@ -17,8 +17,19 @@ class CustomKNN:
         
         
     def predict(self, x):
-        prediction = [self._predict(i) for i in x]
-        return prediction
+        predictions = []
+        
+        for i in range(x.shape[0]):
+            p = self._predict(x[i])
+            # print(p)
+            predictions.append(p)
+            y_pred = []
+            
+            for item in predictions:
+                print(item[0][0])
+                y_pred.append(item[0][0])
+                
+        return predictions, y_pred
     
     
     def _predict(self, x):
@@ -30,5 +41,5 @@ class CustomKNN:
         knn_labels = [self.y_train[i] for i in k_indices]
         
         # Majority voting 
-        most_common = Counter(knn_labels).most_common()
+        most_common = Counter(knn_labels).most_common(1)
         return most_common

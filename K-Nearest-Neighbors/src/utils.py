@@ -97,14 +97,32 @@ def get_error(y_train, y_pred_train):
     return mean_squared_error(y_train, y_pred_train)   
 
 def get_accuracy(y_test, y_pred):
-    accuracy = accuracy_score(y_test, y_pred)
+    
+    # Convert y_test to binary format
+    y_test_binary, mlb = convert_to_binary_format(y_test)
+    # Convert y_pred to binary format using the same MultiLabelBinarizer
+    y_pred_binary, _ = convert_to_binary_format(y_pred, mlb)
+    
+    accuracy = accuracy_score(y_test_binary, y_pred_binary)
     print(f"Accuracy: {accuracy:.2f}")
-    precision = precision_score(y_test, y_pred, average='weighted')
+    
+    precision = precision_score(y_test_binary, y_pred_binary, average='weighted')
     print(f"Precision: {precision:.2f}")
-    recall = recall_score(y_test, y_pred, average='weighted')
+    
+    recall = recall_score(y_test_binary, y_pred_binary, average='weighted')
     print(f"Recall: {recall:.2f}")
-    f1 = f1_score(y_test, y_pred, average='weighted')
+    
+    f1 = f1_score(y_test_binary, y_pred_binary, average='weighted')
     print(f"F1 Score: {f1:.2f}")
+    
+    # accuracy = accuracy_score(y_test, y_pred)
+    # print(f"Accuracy: {accuracy:.2f}")
+    # precision = precision_score(y_test, y_pred, average='weighted')
+    # print(f"Precision: {precision:.2f}")
+    # recall = recall_score(y_test, y_pred, average='weighted')
+    # print(f"Recall: {recall:.2f}")
+    # f1 = f1_score(y_test, y_pred, average='weighted')
+    # print(f"F1 Score: {f1:.2f}")
     
     
     
@@ -142,7 +160,10 @@ def get_image_dataset(dir, image_width, image_height, labels):
     return x, y
 
 
-def convert_to_binary_format(y):
-    mlb = MultiLabelBinarizer()
-    y_binary = mlb.fit_transform(y)
+def convert_to_binary_format(y, mlb=None):
+    if mlb is None:
+        mlb = MultiLabelBinarizer()
+        y_binary = mlb.fit_transform(y)
+    else:
+        y_binary = mlb.transform(y)
     return y_binary, mlb
