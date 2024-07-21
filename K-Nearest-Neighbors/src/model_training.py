@@ -15,5 +15,17 @@ def train_model(x_train, y_train, number_of_iterations, learning_rate, model_typ
         return model
 
 
+def get_train_dataset(train_dir, batch_size, image_width, image_height, augmentation):
+    train_dataset = tf.keras.preprocessing.image_dataset_from_directory(
+    train_dir,
+    image_size=(image_height, image_width),
+    batch_size=batch_size,
+    color_mode='grayscale',
+    label_mode='categorical'  # or 'categorical' for one-hot encoded labels
+    )
+    if augmentation:
+        train_dataset = train_dataset.map(, num_parallel_calls=tf.data.AUTOTUNE)
+    return train_dataset
+
 
 
