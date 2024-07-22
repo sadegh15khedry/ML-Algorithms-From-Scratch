@@ -1,9 +1,9 @@
-# Spam Email Detection Using Logestic Regression From The Scatch
+# Naive Bayes Classifier From The Scatch
 
 
 ## Introduction
 
-This project utilizes a Logestic Regressor model that has been built from the scratch to classify spam emails. The main reason behind this project was to get a better understanding of how the Logestic Regression works.
+This project utilizes a Naive Bayes Classifier model that has been built from the scratch to classify sentiment of movie reviews. The main reason behind this project was to get a better understanding of how the Naive Bayes Classifier works.
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ This project utilizes a Logestic Regressor model that has been built from the sc
 
 ## Overview
 
-This project is focused on implementing a custom logestic regression model and comparing it with the standard scikit-learn linear regression model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the Spam email Dataset.
+This project is focused on implementing a custom Naive Bayes Classifier model and comparing it with the standard scikit-learn Naive Bayes Classifier model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the IMDB movie reviews dataset.
 
 ## Directory Structure
 ```
@@ -34,7 +34,7 @@ This project is focused on implementing a custom logestic regression model and c
 │ ├── utils.py
 │ ├── model_training.py
 │ ├── model_evaluation.py
-│ ├── logestic_regression.py
+│ ├── naive_bayes
 │ ├── data_preprocessing.py
 │ └── data_exploration.py
 ├── notebooks
@@ -68,7 +68,7 @@ Utility functions for various tasks.
 
 Functions for training the model.
 
-- `train_model(x_train, y_train, number_of_iterations, learning_rate, model_type='custom')`: Trains a logestic regression model, either custom or sklearn's.
+- `train_model`: Trains a Naive Bayes Classifier model, either custom or sklearn's.
 
 ### model_evaluation.py
 
@@ -80,31 +80,22 @@ Functions for evaluating the model.
 
 Custom implementation of linear regression.
 
-- `CustomLogesticRegression`: Class for custom logestic regression.
-  - `__init__(self, learning_rate=0.001, number_of_iterations=1000)`: Initializes the model.
-  - `fit(self, x, y)`: Trains the model.
-  - `predict(self, x)`: Makes predictions.
+- `CustomNaiveBayesClassifier`: Class for custom logestic regression.
+  - `__init__`: Initializes the model.
+  - `fit`: Trains the model.
+  - `predict`: Makes predictions.
     
 
 ### data_preprocessing.py
 
 Functions for data preprocessing.
 
-- `split_data(df, feature_column, label_column, test_size=0.2, random_state=50)`: Splits the data into training and testing sets.
-- `normalize_data(df, method, normalization_columns)`: Normalizes the data using various methods.
-- `convert_splitted_data_to_dataframe`: converts the splited data to pandas dataframe
-- `remove_punctuation`:  removes punctuation
-- `remove_stopwords`: removes stopwords
-- `stem_words`: stem each word.
-- `extract_features`:vectorize text using tfidfVectorizer
-- `encode_labels`: ecodes categorical labels to 0 and 1. 0 for not beeing a spam and 1 for spam.
-- `claen_data`: applaying functions to clean and preprocess data
+
 
 ### data_exploration.py
 
 Functions for data exploration.
 
-- `plot_correlation_matrix(correlation_matrix)`: Plots and saves the  correlation matrix heatmap.
 
 ### Notebooks
 
@@ -115,7 +106,7 @@ Functions for data exploration.
 
 ## Dataset
 
-The dataset used is the Spam email Dataset. get the dataset using the fallowing link https://www.kaggle.com/datasets/jackksoncsie/spam-email-dataset
+The dataset used is the IMDB movie reviews Dataset. get the dataset using the fallowing link https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
 
 ## Model Performance
 
@@ -129,7 +120,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 
     ```bash
     git clone https://github.com/sadegh15khedry/ML-Algorithms-From-Scratch.git
-    cd ML-Algorithms-From-Scratch/Logestic-Regression
+    cd ML-Algorithms-From-Scratch/Naive-Bayes-Classifier
     ```
 
 2. **Create the conda environment:**
@@ -141,7 +132,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 3. **Activate the conda environment:**
 
     ```bash
-    conda activate your-env-name
+    conda activate naive-bayes-classifier
     ```
 
 4. **Verify the installation:**
@@ -153,14 +144,14 @@ To set up the project environment, use the `environment.yml` file to create a co
 
 ## Acknowledgments
 
-- This project is based AssemblyAI video on logestic regression implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=YYEJ_GUguHw&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=4)) to see their video on this project. 
+- This project is based AssemblyAI video on Naive Bayes Classifier implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=TLInuAorxqE&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=8)) to see their video on this project. 
 - Special thanks to the developers and contributors the libraries used in this project, including NumPy, pandas, scikit-learn, Seaborn, and Matplotlib.
-- Huge thaks to contributors of the  Spam email Dataset.
+- Huge thaks to contributors of the IMDB movie reviews Dataset.
 
 ## Further Improvements
 
 - Add hyperparameter tuning to optimize the model parameters.
-- Extend the evaluation metrics to include R^2 score and MAE (Mean Absolute Error).
+
 
   
 ## License
