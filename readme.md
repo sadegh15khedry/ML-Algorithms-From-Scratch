@@ -18,15 +18,16 @@ Machine learning is a field of computer science that gives computers the ability
 
 ## Algorithms Implemented
 
-- [x] Linear Regression  (will be implemented)
-- [x] Logistic Regression (will be implemented)
-- [x] K-Nearest Neighbors (KNN) (will be implemented)
-- [x] Decision Tree (will be implemented)
-- [x] Random Forest (will be implemented)
-- [x] Support Vector Machine (SVM) (will be implemented)
-- [x] K-Means Clustering (will be implemented)
-- [x] Principal Component Analysis (PCA) (will be implemented)
-- [x] Neural Networks  (will be implemented)
+- [x] Linear Regression
+- [x] Logistic Regression 
+- [x] K-Nearest Neighbors (KNN)
+- [x] Naive Bayes Classifier
+- [ ] Decision Tree (will be implemented)
+- [ ] Random Forest (will be implemented)
+- [ ] Support Vector Machine (SVM) (will be implemented)
+- [ ] K-Means Clustering (will be implemented)
+- [ ] Principal Component Analysis (PCA) (will be implemented)
+- [ ] Neural Networks  (will be implemented)
 - [ ] (More algorithms will be added...)
 
 ## Installation
