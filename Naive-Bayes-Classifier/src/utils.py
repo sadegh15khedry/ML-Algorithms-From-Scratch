@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
+import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, mean_squared_error
 
@@ -50,3 +51,6 @@ def get_accuracy(y_test, y_pred):
     print(f"Recall: {recall:.2f}")
     f1 = f1_score(y_test, y_pred)
     print(f"F1 Score: {f1:.2f}")
+    
+def convert_dataframe_to_numpy_array(dataframe):
+    return np.array(dataframe)  
