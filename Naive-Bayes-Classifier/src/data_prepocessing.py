@@ -62,9 +62,9 @@ def stem_words(text):
     return ' '.join([stemmer.stem(word) for word in text.split()])
 
 
-def extract_features(df):
+def extract_features(df, text_column):
     vectorizer = TfidfVectorizer()
-    x = vectorizer.fit_transform(df['text'].apply(lambda x: ' '.join(x)))
+    x = vectorizer.fit_transform(df[text_column].apply(lambda x: ' '.join(x)))
     return x
 
 def encode_labels(df, label):
