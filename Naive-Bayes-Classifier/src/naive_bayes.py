@@ -7,6 +7,7 @@ class CustomNaiveBayesClassifier:
         
         
     def fit(self, x, y):
+        # print(type(x))
         number_of_samples, number_of_features = x.shape
         self._classes = np.unique(y)
         n_classes = len(self._classes)
@@ -25,10 +26,12 @@ class CustomNaiveBayesClassifier:
             
                 
     def predict(self, x):
-        # Ensure input x is a 2D array
-        if x.ndim == 1:
-            x = x.reshape(1, -1)
-        y_pred = [self._predict(i) for i in x]
+        # print(type(x))
+        
+        y_pred = []
+        for i in x:
+            print(type(i))
+            y_pred.append(self._predict(i))
         return np.array(y_pred)
     
     def _predict(self, x):
@@ -36,6 +39,7 @@ class CustomNaiveBayesClassifier:
         # Calculating posteriors for each class
         for index, c in enumerate(self._classes):
             prior = np.log(self._priors[index])
+            # print(type(x))
             pdf = self._probability_density(index, x)
             pdf = np.clip(pdf, a_min=self.epsilon, a_max=None)
             posterior = np.sum(np.log(pdf))
@@ -49,6 +53,7 @@ class CustomNaiveBayesClassifier:
     def _probability_density(self, class_index, x):
         mean = self._mean[class_index]
         var = self._var[class_index]
+        # print(type(x))
         numerator = np.exp(-((x - mean)**2) / (2 * var))
         denominator = np.sqrt(2 * np.pi * var)
         return numerator / denominator

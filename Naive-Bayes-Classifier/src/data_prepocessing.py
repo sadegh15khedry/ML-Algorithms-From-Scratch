@@ -28,26 +28,32 @@ def convert_splitted_data_to_dataframe(X_train_dense, y_train, X_test_dense, y_t
 # train_df.to_csv('train_dataset.csv', index=False)
 # test_df.to_csv('test_dataset.csv', index=False)
   
-def normalize_data(df, method, normalization_columns):
-    if method == 'max_abs':
-        for column in normalization_columns:
-            df[column] = df[column] / df[column].abs().max()
-    elif method == 'min_max':
-        for column in normalization_columns: 
-            df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())     
-    elif method == 'z_score':
-        for column in normalization_columns: 
-            df[column] = (df[column] - df[column].mean()) / df[column].std()
-    elif method == 'robust':
-        for column in normalization_columns:
-            df[column] = (df[column] - df[column].median()) / (df[column].quantile(0.75) - df[column].quantile(0.25))
-    elif method == 'log':
-        for column in normalization_columns:
-            df[column] = np.log1p(df[column])
-    elif method == 'l2':
-        df = df.apply(lambda x: x / np.sqrt(np.sum(np.square(x))), axis=1)
+# def normalize_data(df, method, normalization_columns):
+#     if method == 'max_abs':
+#         for column in normalization_columns:
+#             df[column] = df[column] / df[column].abs().max()
+#     elif method == 'min_max':
+#         for column in normalization_columns: 
+#             df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())     
+#     elif method == 'z_score':
+#         for column in normalization_columns: 
+#             df[column] = (df[column] - df[column].mean()) / df[column].std()
+#     elif method == 'robust':
+#         for column in normalization_columns:
+#             df[column] = (df[column] - df[column].median()) / (df[column].quantile(0.75) - df[column].quantile(0.25))
+#     elif method == 'log':
+#         for column in normalization_columns:
+#             df[column] = np.log1p(df[column])
+#     elif method == 'l2':
+#         df = df.apply(lambda x: x / np.sqrt(np.sum(np.square(x))), axis=1)
     
-    return df
+#     return df
+
+
+def encode_labels(df, label):
+    encoder = LabelEncoder()
+    y = encoder.fit_transform(df[label])
+    return y
 
 
 def remove_punctuation(text):
@@ -61,17 +67,11 @@ def stem_words(text):
     stemmer = PorterStemmer()
     return ' '.join([stemmer.stem(word) for word in text.split()])
 
+def claen_data(df, column):
+    df[column] = df[column].apply(remove_punctuation).str.lower().apply(remove_stopwords).apply(stem_words)
+    return df
 
 def extract_features(df, text_column):
     vectorizer = TfidfVectorizer()
-    x = vectorizer.fit_transform(df[text_column].apply(lambda x: ' '.join(x)))
+    x = vectorizer.fit_transform(df[text_column])
     return x
-
-def encode_labels(df, label):
-    encoder = LabelEncoder()
-    y = encoder.fit_transform(df[label])
-    return y
-
-def claen_data(df, column):
-    df[column] = df[column].apply(remove_punctuation).str.lower().apply(remove_stopwords).apply(stem_words).apply(word_tokenize)
-    return df
