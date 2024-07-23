@@ -10,20 +10,24 @@ class CustomNaiveBayesClassifier:
         number_of_samples, number_of_features = x.shape
         self._classes = np.unique(y)
         n_classes = len(self._classes)
+        self.epsilon = 1e-9
         
         # Calculating the mean, variance, and prior for each class
-        self.mean = np.zeros((n_classes, number_of_features), dtype=np.float64)
-        self.var = np.zeros((n_classes, number_of_features), dtype=np.float64)
-        self.priors = np.zeros(n_classes, dtype=np.float64)
+        self._mean = np.zeros((n_classes, number_of_features), dtype=np.float64)
+        self._var = np.zeros((n_classes, number_of_features), dtype=np.float64)
+        self._priors = np.zeros(n_classes, dtype=np.float64)
         
         for index, c in enumerate(self._classes):
             x_class = x[y == c]
-            self.mean[index, :] = x_class.mean(axis=0)
-            self.var[index, :] = x_class.var(axis=0)
-            self._priors[index, :] = x_class.shape[0] / float(number_of_samples)
+            self._mean[index, :] = x_class.mean(axis=0)
+            self._var[index, :] = x_class.var(axis=0) + self.epsilon
+            self._priors[index] = x_class.shape[0] / float(number_of_samples)
             
                 
     def predict(self, x):
+        # Ensure input x is a 2D array
+        if x.ndim == 1:
+            x = x.reshape(1, -1)
         y_pred = [self._predict(i) for i in x]
         return np.array(y_pred)
     
@@ -32,17 +36,19 @@ class CustomNaiveBayesClassifier:
         # Calculating posteriors for each class
         for index, c in enumerate(self._classes):
             prior = np.log(self._priors[index])
-            posterior = np.sum(np.log(self._probability_density(index, x)))
+            pdf = self._probability_density(index, x)
+            pdf = np.clip(pdf, a_min=self.epsilon, a_max=None)
+            posterior = np.sum(np.log(pdf))
             posterior = posterior + prior
             
             posteriors.append(posterior)
             
-            # Returing the class the highest Posteriors
-            return self._classes[np.argmax(posteriors)]
+        # Returing the class with the highest Posteriors
+        return self._classes[np.argmax(posteriors)]
     
-    def _probability_density(self, index, x):
-        mean = self.mean(index)
-        var = self.var(index)
+    def _probability_density(self, class_index, x):
+        mean = self._mean[class_index]
+        var = self._var[class_index]
         numerator = np.exp(-((x - mean)**2) / (2 * var))
         denominator = np.sqrt(2 * np.pi * var)
         return numerator / denominator
