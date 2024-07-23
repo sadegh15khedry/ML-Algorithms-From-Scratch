@@ -34,7 +34,7 @@ def display_target_values(df, target):
     plt.savefig('../results/target_values.png')
     plt.show()
 
-def vocab_analysis(df):    
+def vocab_analysis(df, column):    
     # Download stopwords
     nltk.download('stopwords')
 
@@ -47,7 +47,7 @@ def vocab_analysis(df):
         return tokens
 
     # Apply preprocessing and flatten the list of tokens
-    all_tokens = df['text'].apply(preprocess).sum()
+    all_tokens = df[column].apply(preprocess).sum()
 
     # Get the most common words
     word_freq = Counter(all_tokens)

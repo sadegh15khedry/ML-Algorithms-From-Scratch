@@ -1,4 +1,4 @@
-name: logestic-regression
+name: naive-bayes-classifier
 channels:
   - defaults
   - conda-forge
