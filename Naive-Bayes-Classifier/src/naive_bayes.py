@@ -28,4 +28,21 @@ class CustomNaiveBayesClassifier:
         return np.array(y_pred)
     
     def _predict(self, x):
-        
+        posteriors = []
+        # Calculating posteriors for each class
+        for index, c in enumerate(self._classes):
+            prior = np.log(self._priors[index])
+            posterior = np.sum(np.log(self._probability_density(index, x)))
+            posterior = posterior + prior
+            
+            posteriors.append(posterior)
+            
+            # Returing the class the highest Posteriors
+            return self._classes[np.argmax(posteriors)]
+    
+    def _probability_density(self, index, x):
+        mean = self.mean(index)
+        var = self.var(index)
+        numerator = np.exp(-((x - mean)**2) / (2 * var))
+        denominator = np.sqrt(2 * np.pi * var)
+        return numerator / denominator
