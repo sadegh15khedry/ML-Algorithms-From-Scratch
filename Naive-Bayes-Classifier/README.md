@@ -110,7 +110,19 @@ The dataset used is the IMDB movie reviews Dataset. get the dataset using the fa
 
 ## Model Performance
 
-this section will be added
+Custom Model
+
+- Train Accuracy: 0.48
+- Train MSE: 0.52
+- Test Accuracy: 0.47
+- Test MSE: 0.53
+
+Sklearn Model
+
+- Train Accuracy: 0.99
+- Train MSE: 0.005
+- Test Accuracy: 0.57
+- Test MSE: 0.43
 
 ## Installation Guide
 
