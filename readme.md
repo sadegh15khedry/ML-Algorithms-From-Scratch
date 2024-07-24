@@ -22,7 +22,7 @@ Machine learning is a field of computer science that gives computers the ability
 - [x] Logistic Regression 
 - [x] K-Nearest Neighbors (KNN)
 - [x] Naive Bayes Classifier
-- [ ] Decision Tree (will be implemented)
+- [x] Decision Tree
 - [ ] Random Forest (will be implemented)
 - [ ] Support Vector Machine (SVM) (will be implemented)
 - [ ] K-Means Clustering (will be implemented)
