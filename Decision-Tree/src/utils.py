@@ -34,3 +34,6 @@ def set_pandas_options():
     pd.set_option('display.max_columns', 20)
     # Increase the maximum width of the display
     pd.set_option('display.width', 1000)
+    
+def load_csv(path):
+    return pd.read_csv(path)
