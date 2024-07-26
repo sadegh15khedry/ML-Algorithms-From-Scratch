@@ -1,4 +1,4 @@
-name: decition-tree
+name: decision-tree
 channels:
   - defaults
   - conda-forge

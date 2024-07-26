@@ -3,6 +3,8 @@ import seaborn as sns
 import joblib
 import pandas as pd
 import csv
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, mean_squared_error
+
 
 def save_confution_matrix(cm, file_path):
     plt.figure(figsize=(10, 7))
@@ -37,3 +39,19 @@ def set_pandas_options():
     
 def load_csv(path):
     return pd.read_csv(path)
+
+def get_error(y_train, y_pred_train):
+    return mean_squared_error(y_train, y_pred_train)   
+
+def get_accuracy_metrics(y_test, y_pred, label_classes):
+    avrage = 'binary'
+    if len(label_classes) > 2:
+        avrage = 'weighted'
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Accuracy: {accuracy:.2f}")
+    precision = precision_score(y_test, y_pred, average='weighted' )
+    print(f"Precision: {precision:.2f}")
+    recall = recall_score(y_test, y_pred, average='weighted' )
+    print(f"Recall: {recall:.2f}")
+    f1 = f1_score(y_test, y_pred, average='weighted' )
+    print(f"F1 Score: {f1:.2f}")

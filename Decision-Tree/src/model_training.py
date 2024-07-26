@@ -1,8 +1,19 @@
-from sklearn.ensemble import RandomForestRegressor 
+from sklearn import tree
+
+from decision_tree import CustomDecisionTree
 
 
-def train_model(x_train, y_train, estimators=100):
-    model = RandomForestRegressor (n_estimators=estimators, random_state=50)
-    model.fit(x_train, y_train)
-    return model
+def train_model(x_train, y_train, model_type='custom'):
+    if model_type == 'custom':
+        model = CustomDecisionTree()
+        model.fit(x_train, y_train)
+        return model
+    
+    elif model_type == 'sklearn':
+        model = tree.DecisionTreeClassifier()
+        model.fit(x_train, y_train)
+        return model
+
+
+
 
