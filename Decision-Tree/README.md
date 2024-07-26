@@ -1,4 +1,4 @@
-# decision Tree From The Scatch
+# Decision Tree From The Scatch
 
 
 ## Introduction
