@@ -1,9 +1,9 @@
-# Decition Tree From The Scatch
+# Decision Tree From The Scatch
 
 
 ## Introduction
 
-This project utilizes a Decition Tree model that has been built from the scratch to classify Iris flowers. The main reason behind this project was to get a better understanding of how the Decition tree works.
+This project utilizes a decision Tree model that has been built from the scratch to classify Iris flowers. The main reason behind this project was to get a better understanding of how the decision tree works.
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ This project utilizes a Decition Tree model that has been built from the scratch
 
 ## Overview
 
-This project is focused on implementing a custom decition tree model and comparing it with the standard scikit-learn decition tree model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the Spam email Dataset.
+This project is focused on implementing a custom decision tree model and comparing it with the standard scikit-learn decision tree model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the Spam email Dataset.
 
 ## Directory Structure
 ```
@@ -34,7 +34,7 @@ This project is focused on implementing a custom decition tree model and compari
 │ ├── utils.py
 │ ├── model_training.py
 │ ├── model_evaluation.py
-│ ├── decition_tree.py
+│ ├── decision_tree.py
 │ ├── data_preprocessing.py
 │ └── data_exploration.py
 ├── notebooks
@@ -67,9 +67,9 @@ Functions for evaluating the model.
 
 
 
-### decition_tree.py
+### decision_tree.py
 
-Custom implementation of decition tree.
+Custom implementation of decision tree.
 
 
     
@@ -120,7 +120,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 3. **Activate the conda environment:**
 
     ```bash
-    conda activate decition-tree
+    conda activate decision-tree
     ```
 
 4. **Verify the installation:**
@@ -132,7 +132,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 
 ## Acknowledgments
 
-- This project is based AssemblyAI video on decition tree implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=NxEHSAfFlK8&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=5) to see their video on this project. 
+- This project is based AssemblyAI video on decision tree implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=NxEHSAfFlK8&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=5) to see their video on this project. 
 - Special thanks to the developers and contributors the libraries used in this project, including NumPy, pandas, scikit-learn, Seaborn, and Matplotlib.
 - Huge thaks to contributors of the  Spam email Dataset.
 
