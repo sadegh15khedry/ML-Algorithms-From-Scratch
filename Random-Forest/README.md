@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This project utilizes a Random Forest model that has been built from the scratch to classify Iris flowers. The main reason behind this project was to get a better understanding of how the Random Forest works.
+This project utilizes a Random Forest model that has been built from the scratch to classify on Iris Dataset. The main reason behind this project was to get a better understanding of how the Random Forest works.
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ This project utilizes a Random Forest model that has been built from the scratch
 
 ## Overview
 
-This project is focused on implementing a custom Random Forest model and comparing it with the standard scikit-learn Random Forest model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the Spam email Dataset.
+This project is focused on implementing a custom Random Forest model and comparing it with the standard scikit-learn Random Forest model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the credit card transaction fraud detection dataset.
 
 ## Directory Structure
 ```
@@ -35,6 +35,8 @@ This project is focused on implementing a custom Random Forest model and compari
 │ ├── model_training.py
 │ ├── model_evaluation.py
 │ ├── decision_tree.py
+| ├── random_forest.py
+| ├── node.py
 │ ├── data_preprocessing.py
 │ └── data_exploration.py
 ├── notebooks
@@ -69,10 +71,15 @@ Functions for evaluating the model.
 
 ### decision_tree.py
 
+Custom implementation of decision tree.
+
+### random_forest.py
+
 Custom implementation of Random Forest.
 
+### node.py
 
-    
+Custom implementation of node to use in decision tree.
 
 ### data_preprocessing.py
 
@@ -94,7 +101,7 @@ Functions for data exploration.
 
 ## Dataset
 
-The dataset used is the Iris Flower Dataset. get the dataset using the fallowing link [kaggle](https://www.kaggle.com/datasets/arshid/iris-flower-dataset)
+The dataset used is Iris Dataset . get the dataset using the fallowing link [kaggle](https://www.kaggle.com/datasets/arshid/iris-flower-dataset)
 
 ## Model Performance
 
@@ -108,7 +115,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 
     ```bash
     git clone https://github.com/sadegh15khedry/ML-Algorithms-From-Scratch.git
-    cd ML-Algorithms-From-Scratch/Decision-Tree
+    cd ML-Algorithms-From-Scratch/Random-Forest
     ```
 
 2. **Create the conda environment:**
@@ -120,7 +127,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 3. **Activate the conda environment:**
 
     ```bash
-    conda activate decision-tree
+    conda activate random-forest
     ```
 
 4. **Verify the installation:**
@@ -132,9 +139,9 @@ To set up the project environment, use the `environment.yml` file to create a co
 
 ## Acknowledgments
 
-- This project is based AssemblyAI video on Random Forest implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=NxEHSAfFlK8&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=5) to see their video on this project. 
+- This project is based AssemblyAI video on Random Forest implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=kFwe2ZZU7yw&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=6) to see their video on this project. 
 - Special thanks to the developers and contributors the libraries used in this project, including NumPy, pandas, scikit-learn, Seaborn, and Matplotlib.
-- Huge thaks to contributors of the  Spam email Dataset.
+- Huge thaks to contributors of the Iris Dataset.
 
 ## Further Improvements
 
