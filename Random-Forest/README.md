@@ -52,43 +52,14 @@ This project is focused on implementing a custom Random Forest model and compari
 ```
 ## Files and Functions
 
-### utils.py
-
-Utility functions for various tasks.
-
-
-
-### model_training.py
-
-Functions for training the model.
-
-
-### model_evaluation.py
-
-Functions for evaluating the model.
-
-
-
-### decision_tree.py
-
-Custom implementation of decision tree.
-
-### random_forest.py
-
-Custom implementation of Random Forest.
-
-### node.py
-
-Custom implementation of node to use in decision tree.
-
-### data_preprocessing.py
-
-Functions for data preprocessing.
-
-
-### data_exploration.py
-
-Functions for data exploration.
+- `utils.py` : Utility functions for various tasks.
+- `model_training.py` : Functions for training the model.
+- `model_evaluation.py` : Functions for evaluating the model.
+- `decision_tree.py` : Custom implementation of decision tree.
+- `random_forest.py` : Custom implementation of Random Forest.
+- `node.py` : Custom implementation of node to use in decision tree.
+- `data_preprocessing.py` : Functions for data preprocessing.
+- `data_exploration.py` : Functions for data exploration.
 
 
 
