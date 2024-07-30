@@ -49,56 +49,16 @@ This project is focused on implementing a custom Naive Bayes Classifier model an
 └── README.md
 ```
 ## Files and Functions
-
-### utils.py
-
-Utility functions for various tasks.
-
-- `save_confution_matrix(cm, file_path)`: Saves a confusion matrix as a heatmap.
-- `save_report(report, file_path)`: Saves a classification report to a file.
-- `save_dataframe_as_csv(df, file_path)`: Saves a pandas DataFrame to a CSV file.
-- `save_model(model, path)`: Saves a trained model to a file.
-- `load_model(path)`: Loads a model from a file.
-- `load_data(path)`: Loads a CSV file into a pandas DataFrame.
-- `set_pandas_options()`: Sets display options for pandas.
-- `get_error(y_train, y_pred_train)`: Calculates mean squared error.
--  `get_accuracy`: Calculates accuracy metrics.
-
-### model_training.py
-
-Functions for training the model.
-
-- `train_model`: Trains a Naive Bayes Classifier model, either custom or sklearn's.
-
-### model_evaluation.py
-
-Functions for evaluating the model.
-
-
-
-### logestic_regression.py
-
-Custom implementation of linear regression.
-
-- `CustomNaiveBayesClassifier`: Class for custom logestic regression.
-  - `__init__`: Initializes the model.
-  - `fit`: Trains the model.
-  - `predict`: Makes predictions.
-    
-
-### data_preprocessing.py
-
-Functions for data preprocessing.
-
-
-
-### data_exploration.py
-
-Functions for data exploration.
-
-
-### Notebooks
-
+- `utils.py` : Utility functions for various tasks.
+- `model_training.py` : Functions for training the model.
+- `model_evaluation.py` : Functions for evaluating the model.
+- `linear_regression.py` : Custom implementation of linear regression.
+- `data_preprocessing.py` : Functions for data preprocessing.
+- `data_exploration.py` : Functions for data exploration.
+- `data_exploration.ipynb`: Notebook for data exploration.
+- `data_preprocessing.ipynb`: Notebook for data preprocessing.
+- `model_training.ipynb`: Notebook for model training.
+- `model_evaluation.ipynb`: Notebook for model evaluation.
 - `data_exploration.ipynb`: Notebook for data exploration.
 - `data_preprocessing.ipynb`: Notebook for data preprocessing.
 - `model_training.ipynb`: Notebook for model training.
