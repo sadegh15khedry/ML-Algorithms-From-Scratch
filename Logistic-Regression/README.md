@@ -1,4 +1,4 @@
-# Spam Email Detection Using Logestic Regression From The Scatch
+# Logestic Regression From The Scatch
 
 
 ## Introduction
@@ -10,13 +10,6 @@ This project utilizes a Logestic Regressor model that has been built from the sc
 - [Overview](#overview)
 - [Directory Structure](#directory-structure)
 - [Files and Functions](#files-and-functions)
-  - [utils.py](#utilspy)
-  - [model_training.py](#model_trainingpy)
-  - [model_evaluation.py](#model_evaluationpy)
-  - [linear_regression.py](#linear_regressionpy)
-  - [data_preprocessing.py](#data_preprocessingpy)
-  - [data_exploration.py](#data_explorationpy)
-  - [Notebooks](#notebooks)
 - [Dataset](#dataset)
 - [Model Performance](#model-performance)
 - [Installation Guide](#installation-guide)
