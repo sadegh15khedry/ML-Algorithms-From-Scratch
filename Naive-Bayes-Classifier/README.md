@@ -10,13 +10,6 @@ This project utilizes a Naive Bayes Classifier model that has been built from th
 - [Overview](#overview)
 - [Directory Structure](#directory-structure)
 - [Files and Functions](#files-and-functions)
-  - [utils.py](#utilspy)
-  - [model_training.py](#model_trainingpy)
-  - [model_evaluation.py](#model_evaluationpy)
-  - [linear_regression.py](#linear_regressionpy)
-  - [data_preprocessing.py](#data_preprocessingpy)
-  - [data_exploration.py](#data_explorationpy)
-  - [Notebooks](#notebooks)
 - [Dataset](#dataset)
 - [Model Performance](#model-performance)
 - [Installation Guide](#installation-guide)
@@ -52,7 +45,7 @@ This project is focused on implementing a custom Naive Bayes Classifier model an
 - `utils.py` : Utility functions for various tasks.
 - `model_training.py` : Functions for training the model.
 - `model_evaluation.py` : Functions for evaluating the model.
-- `linear_regression.py` : Custom implementation of linear regression.
+- `naive_bayes.py` : Custom implementation of naive bayes classifier.
 - `data_preprocessing.py` : Functions for data preprocessing.
 - `data_exploration.py` : Functions for data exploration.
 - `data_exploration.ipynb`: Notebook for data exploration.
