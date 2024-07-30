@@ -48,8 +48,7 @@ This project is focused on implementing a custom knn model and comparing it with
 - `utils.py` : Utility functions for various tasks.
 - `model_training.py` : Functions for training the model.
 - `model_evaluation.py` : Functions for evaluating the model.
--  `k_nearest_neighbors.py` : Custom implementation of KNN.
-- `node.py` : Custom implementation of node to use in decision tree.
+- `k_nearest_neighbors.py` : Custom implementation of KNN.
 - `data_preprocessing.py` : Functions for data preprocessing.
 - `data_exploration.py` : Functions for data exploration.
 - `data_exploration.ipynb`: Notebook for data exploration.
