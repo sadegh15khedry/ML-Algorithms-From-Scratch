@@ -1,4 +1,4 @@
-name: decision-tree
+name: random-forest
 channels:
   - defaults
   - conda-forge
