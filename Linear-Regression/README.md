@@ -1,4 +1,4 @@
-# Housing Prices Prediction Using Linear Regression From The Scratch
+# Linear Regression From The Scratch
 
 ## Introduction
 
@@ -9,13 +9,6 @@ This project utilizes a Linear Regressor model that has been built from the scra
 - [Overview](#overview)
 - [Directory Structure](#directory-structure)
 - [Files and Functions](#files-and-functions)
-  - [utils.py](#utilspy)
-  - [model_training.py](#model_trainingpy)
-  - [model_evaluation.py](#model_evaluationpy)
-  - [linear_regression.py](#linear_regressionpy)
-  - [data_preprocessing.py](#data_preprocessingpy)
-  - [data_exploration.py](#data_explorationpy)
-  - [Notebooks](#notebooks)
 - [Dataset](#dataset)
 - [Model Performance](#model-performance)
 - [Installation Guide](#installation-guide)
@@ -48,6 +41,18 @@ This project is focused on implementing a custom linear regression model and com
 └── README.md
 ```
 ## Files and Functions
+
+- `utils.py` : Utility functions for various tasks.
+- `model_training.py` : Functions for training the model.
+- `model_evaluation.py` : Functions for evaluating the model.
+- `linear_regression.py` : Custom implementation of linear regression.
+- `data_preprocessing.py` : Functions for data preprocessing.
+- `data_exploration.py` : Functions for data exploration.
+- `data_exploration.ipynb`: Notebook for data exploration.
+- `data_preprocessing.ipynb`: Notebook for data preprocessing.
+- `model_training.ipynb`: Notebook for model training.
+- `model_evaluation.ipynb`: Notebook for model evaluation.
+
 
 ### utils.py
 
