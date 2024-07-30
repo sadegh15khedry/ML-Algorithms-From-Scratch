@@ -10,13 +10,6 @@ This project utilizes a decision Tree model that has been built from the scratch
 - [Overview](#overview)
 - [Directory Structure](#directory-structure)
 - [Files and Functions](#files-and-functions)
-  - [utils.py](#utilspy)
-  - [model_training.py](#model_trainingpy)
-  - [model_evaluation.py](#model_evaluationpy)
-  - [linear_regression.py](#linear_regressionpy)
-  - [data_preprocessing.py](#data_preprocessingpy)
-  - [data_exploration.py](#data_explorationpy)
-  - [Notebooks](#notebooks)
 - [Dataset](#dataset)
 - [Model Performance](#model-performance)
 - [Installation Guide](#installation-guide)
@@ -50,47 +43,20 @@ This project is focused on implementing a custom decision tree model and compari
 ```
 ## Files and Functions
 
-### utils.py
+## Files and Functions
 
-Utility functions for various tasks.
-
-
-
-### model_training.py
-
-Functions for training the model.
-
-
-### model_evaluation.py
-
-Functions for evaluating the model.
-
-
-
-### decision_tree.py
-
-Custom implementation of decision tree.
-
-
-    
-
-### data_preprocessing.py
-
-Functions for data preprocessing.
-
-
-### data_exploration.py
-
-Functions for data exploration.
-
-
-
-### Notebooks
-
+- `utils.py` : Utility functions for various tasks.
+- `model_training.py` : Functions for training the model.
+- `model_evaluation.py` : Functions for evaluating the model.
+- `decision_tree.py` : Custom implementation of decision tree.
+- `node.py` : Custom implementation of node to use in decision tree.
+- `data_preprocessing.py` : Functions for data preprocessing.
+- `data_exploration.py` : Functions for data exploration.
 - `data_exploration.ipynb`: Notebook for data exploration.
 - `data_preprocessing.ipynb`: Notebook for data preprocessing.
 - `model_training.ipynb`: Notebook for model training.
 - `model_evaluation.ipynb`: Notebook for model evaluation.
+
 
 ## Dataset
 
