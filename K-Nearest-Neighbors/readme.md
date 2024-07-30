@@ -11,13 +11,6 @@ This project utilizes a KNN model that has been built from the scratch to classi
 - [Overview](#overview)
 - [Directory Structure](#directory-structure)
 - [Files and Functions](#files-and-functions)
-  - [utils.py](#utilspy)
-  - [model_training.py](#model_trainingpy)
-  - [model_evaluation.py](#model_evaluationpy)
-  - [k_nearest_neighbors.py](#k_nearest_neighborspy)
-  - [data_preprocessing.py](#data_preprocessingpy)
-  - [data_exploration.py](#data_explorationpy)
-  - [Notebooks](#notebooks)
 - [Dataset](#dataset)
 - [Model Performance](#model-performance)
 - [Installation Guide](#installation-guide)
@@ -49,53 +42,21 @@ This project is focused on implementing a custom knn model and comparing it with
 ├── environment.yml
 └── README.md
 ```
+
 ## Files and Functions
 
-### utils.py
-
-Utility functions for various tasks.
-
-
-### model_training.py
-
-Functions for training the model.
-
-- `train_model(x_train, y_train, k, model_type='custom')`: Trains a knn model, either custom or sklearn's.
-
-### model_evaluation.py
-
-Functions for evaluating the model.
-
-
-
-### k_nearest_neighbors.py
-
-Custom implementation of KNN.
-
-- `CustomKNN`: Class for custom KNN.
-  - `__init__(self, k)`: Initializes the model.
-  - `fit(self, x, y)`: Trains the model.
-  - `predict(self, x)`: Makes predictions.
-    
-
-### data_preprocessing.py
-
-Functions for data preprocessing.
-
-
-
-### data_exploration.py
-
-Functions for data exploration.
-
-
-
-### Notebooks
-
+- `utils.py` : Utility functions for various tasks.
+- `model_training.py` : Functions for training the model.
+- `model_evaluation.py` : Functions for evaluating the model.
+- `k_nearest_neighbors.py` : Custom implementation of KNN.
+- `data_preprocessing.py` : Functions for data preprocessing.
+- `data_exploration.py` : Functions for data exploration.
 - `data_exploration.ipynb`: Notebook for data exploration.
 - `data_preprocessing.ipynb`: Notebook for data preprocessing.
 - `model_training.ipynb`: Notebook for model training.
 - `model_evaluation.ipynb`: Notebook for model evaluation.
+
+
 
 ## Dataset
 

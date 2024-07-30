@@ -1,4 +1,4 @@
-# Spam Email Detection Using Logestic Regression From The Scatch
+# Logestic Regression From The Scatch
 
 
 ## Introduction
@@ -10,13 +10,6 @@ This project utilizes a Logestic Regressor model that has been built from the sc
 - [Overview](#overview)
 - [Directory Structure](#directory-structure)
 - [Files and Functions](#files-and-functions)
-  - [utils.py](#utilspy)
-  - [model_training.py](#model_trainingpy)
-  - [model_evaluation.py](#model_evaluationpy)
-  - [linear_regression.py](#linear_regressionpy)
-  - [data_preprocessing.py](#data_preprocessingpy)
-  - [data_exploration.py](#data_explorationpy)
-  - [Notebooks](#notebooks)
 - [Dataset](#dataset)
 - [Model Performance](#model-performance)
 - [Installation Guide](#installation-guide)
@@ -26,7 +19,7 @@ This project utilizes a Logestic Regressor model that has been built from the sc
 
 ## Overview
 
-This project is focused on implementing a custom logestic regression model and comparing it with the standard scikit-learn linear regression model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the Spam email Dataset.
+This project is focused on implementing a custom logestic regression model and comparing it with the standard scikit-learn logistic  regression model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the Spam email Dataset.
 
 ## Directory Structure
 ```
@@ -78,7 +71,7 @@ Functions for evaluating the model.
 
 ### logestic_regression.py
 
-Custom implementation of linear regression.
+Custom implementation of logistic  regression.
 
 - `CustomLogesticRegression`: Class for custom logestic regression.
   - `__init__(self, learning_rate=0.001, number_of_iterations=1000)`: Initializes the model.
