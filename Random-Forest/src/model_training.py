@@ -1,4 +1,4 @@
-from sklearn import tree
+from sklearn.ensemble import RandomForestClassifier
 
 from decision_tree import CustomDecisionTree
 
@@ -10,7 +10,7 @@ def train_model(x_train, y_train, min_samples_split, max_depth, model_type='cust
         return model
     
     elif model_type == 'sklearn':
-        model = tree.DecisionTreeClassifier()
+        model = RandomForestClassifier(max_depth=2, random_state=0)
         model.fit(x_train, y_train)
         return model
 
