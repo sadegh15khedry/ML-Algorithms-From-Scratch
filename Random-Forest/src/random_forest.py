@@ -5,6 +5,15 @@ from collections import Counter
 class CustomRandomForest:
     
     def __init__(self, x, y, n_trees=10, max_depth=10, min_samples_split=2, n_features=None):
+        """
+        Initialize the Random Forest classifier.
+
+        Parameters:
+        - n_trees: Number of trees in the forest.
+        - max_depth: Maximum depth of each tree.
+        - min_samples_split: Minimum number of samples required to split an internal node.
+        - n_features: Number of features to consider when looking for the best split.
+        """
         self.n_trees = n_trees
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
@@ -13,18 +22,34 @@ class CustomRandomForest:
         
         
     def fit(self,x, y):
+        """
+        Train the Random Forest classifier.
+
+        Parameters:
+        - x: Training features.
+        - y: Training labels.
+        """
         self.n_features = x.shape[1]
         for _ in range(self.n_trees):
-            model = CustomRandomForest(max_depth=self.max_depth,
+            model = CustomDecisionTree(max_depth=self.max_depth,
                                        min_samples_split=self.min_samples_split,
                                        n_features=self.n_features)
-            x_sample, y_sample = get_sample_data(x, y, 0.2)
+            x_sample, y_sample = self._get_sample_data(x, y, 0.2)
             model.fit(x_sample, y_sample)
             self.trees.append(model)
             
     def predict(self, x):
+        """
+        Predict the class labels for the provided samples.
+
+        Parameters:
+        - x: Test features.
+
+        Returns:
+        - numpy array of predicted labels.
+        """
         results = []
-        for row in x.shape[0]:
+        for row in x:
             labels = []
             for model_index in range(self.n_trees):
                 model = self.trees[model_index]
@@ -36,13 +61,33 @@ class CustomRandomForest:
         return results
                 
     
-    def get_sample_data(x, y, percentage=0.2):
-        number_of_samples = x.shape[0] * percentage
-        indx = np.random.choice(number_of_samples, number_of_samples, replace=True)
+    def _get_sample_data(self, x, y, percentage=0.2):
+        """
+        Randomly sample the data for bootstrapping.
+
+        Parameters:
+        - x: Features.
+        - y: Labels.
+        - percentage: Proportion of data to sample.
+
+        Returns:
+        - Tuple of sampled features and labels.
+        """
+        number_of_samples = int(x.shape[0] * percentage)
+        indx = np.random.choice(x.shape[0], number_of_samples, replace=True)
         return x[indx], y[indx]
     
-    def _most_common(labels):
+    def _most_common(self, labels):
+        """
+        Find the most common label.
+
+        Parameters:
+        - labels: List of labels.
+
+        Returns:
+        - The most common label.
+        """
         counter = Counter(labels)
-        most_common = counter.most_common(1)
+        most_common = counter.most_common(1)[0][0]
         return most_common
     
