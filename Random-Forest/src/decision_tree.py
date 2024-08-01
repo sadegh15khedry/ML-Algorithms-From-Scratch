@@ -96,6 +96,7 @@ class CustomDecisionTree():
     
     def predict(self, x):
         result = []
+        print(type(x))
         for _, row in x.iterrows():  # Use .iterrows() to iterate over DataFrame rows
             result.append(self._traverse_tree(row, self.root))
         return np.array(result)

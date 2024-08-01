@@ -4,7 +4,7 @@ from collections import Counter
 
 class CustomRandomForest:
     
-    def __init__(self, x, y, n_trees=10, max_depth=10, min_samples_split=2, n_features=None):
+    def __init__(self, n_trees=10, max_depth=10, min_samples_split=2, n_features=None):
         """
         Initialize the Random Forest classifier.
 
@@ -39,6 +39,7 @@ class CustomRandomForest:
             self.trees.append(model)
             
     def predict(self, x):
+        print(x.shape)
         """
         Predict the class labels for the provided samples.
 
@@ -49,16 +50,25 @@ class CustomRandomForest:
         - numpy array of predicted labels.
         """
         results = []
-        for row in x:
-            labels = []
-            for model_index in range(self.n_trees):
-                model = self.trees[model_index]
-                label = model.predict(row)
-                labels.append(label)
-            most_common = self._most_common(labels)
-            results.append(most_common)
-        results = np.array(results)
-        return results
+        # print(type(x))
+        # for index, row in x.iterrows():
+        #     print(type(row))
+        #     print(row)
+            # row = np.array(row)
+        # labels = []
+        # for model_index in range(self.n_trees):
+        #     model = self.trees[model_index]
+        #     label = model.predict(x)
+        #     labels.append(label)
+            
+        #     most_common = self._most_common(labels)
+        #     results.append(most_common)
+        # results = np.array(results)
+        # return results
+        predictions = np.array([tree.predict(x) for tree in self.trees])
+        predictions = np.swapaxes(predictions, 0, 1)
+        predictions = np.array([self._most_common(pred) for pred in predictions])
+        return predictions
                 
     
     def _get_sample_data(self, x, y, percentage=0.2):
@@ -75,7 +85,7 @@ class CustomRandomForest:
         """
         number_of_samples = int(x.shape[0] * percentage)
         indx = np.random.choice(x.shape[0], number_of_samples, replace=True)
-        return x[indx], y[indx]
+        return x.iloc[indx], y.iloc[indx]
     
     def _most_common(self, labels):
         """
