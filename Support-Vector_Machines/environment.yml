@@ -1,4 +1,4 @@
-name: support-vector-machine
+name: support-vector-machines
 channels:
   - defaults
   - conda-forge
