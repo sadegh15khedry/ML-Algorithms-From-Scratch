@@ -1,9 +1,9 @@
-# Logestic Regression From The Scatch
+# Support Vector Machine From The Scatch
 
 
 ## Introduction
 
-This project utilizes a Logestic Regressor model that has been built from the scratch to classify spam emails. The main reason behind this project was to get a better understanding of how the Logestic Regression works.
+This project utilizes a Support Vector Machine model that has been built from the scratch to classify breast cancer. The main reason behind this project was to get a better understanding of how the Support Vector Machine works.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ This project utilizes a Logestic Regressor model that has been built from the sc
 
 ## Overview
 
-This project is focused on implementing a custom logestic regression model and comparing it with the standard scikit-learn logistic  regression model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the Spam email Dataset.
+This project is focused on implementing a custom Support Vector Machine model and comparing it with the standard scikit-learn Support Vector Machine model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the breast cancer Dataset.
 
 ## Directory Structure
 ```
@@ -27,7 +27,7 @@ This project is focused on implementing a custom logestic regression model and c
 │ ├── utils.py
 │ ├── model_training.py
 │ ├── model_evaluation.py
-│ ├── logestic_regression.py
+│ ├── support_vector_machine.py
 │ ├── data_preprocessing.py
 │ └── data_exploration.py
 ├── notebooks
@@ -42,73 +42,22 @@ This project is focused on implementing a custom logestic regression model and c
 └── README.md
 ```
 ## Files and Functions
+## Files and Functions
 
-### utils.py
-
-Utility functions for various tasks.
-
-- `save_confution_matrix(cm, file_path)`: Saves a confusion matrix as a heatmap.
-- `save_report(report, file_path)`: Saves a classification report to a file.
-- `save_dataframe_as_csv(df, file_path)`: Saves a pandas DataFrame to a CSV file.
-- `save_model(model, path)`: Saves a trained model to a file.
-- `load_model(path)`: Loads a model from a file.
-- `load_data(path)`: Loads a CSV file into a pandas DataFrame.
-- `set_pandas_options()`: Sets display options for pandas.
-- `get_error(y_train, y_pred_train)`: Calculates mean squared error.
--  `get_accuracy`: Calculates accuracy metrics.
-
-### model_training.py
-
-Functions for training the model.
-
-- `train_model(x_train, y_train, number_of_iterations, learning_rate, model_type='custom')`: Trains a logestic regression model, either custom or sklearn's.
-
-### model_evaluation.py
-
-Functions for evaluating the model.
-
-
-
-### logestic_regression.py
-
-Custom implementation of logistic  regression.
-
-- `CustomLogesticRegression`: Class for custom logestic regression.
-  - `__init__(self, learning_rate=0.001, number_of_iterations=1000)`: Initializes the model.
-  - `fit(self, x, y)`: Trains the model.
-  - `predict(self, x)`: Makes predictions.
-    
-
-### data_preprocessing.py
-
-Functions for data preprocessing.
-
-- `split_data(df, feature_column, label_column, test_size=0.2, random_state=50)`: Splits the data into training and testing sets.
-- `normalize_data(df, method, normalization_columns)`: Normalizes the data using various methods.
-- `convert_splitted_data_to_dataframe`: converts the splited data to pandas dataframe
-- `remove_punctuation`:  removes punctuation
-- `remove_stopwords`: removes stopwords
-- `stem_words`: stem each word.
-- `extract_features`:vectorize text using tfidfVectorizer
-- `encode_labels`: ecodes categorical labels to 0 and 1. 0 for not beeing a spam and 1 for spam.
-- `claen_data`: applaying functions to clean and preprocess data
-
-### data_exploration.py
-
-Functions for data exploration.
-
-- `plot_correlation_matrix(correlation_matrix)`: Plots and saves the  correlation matrix heatmap.
-
-### Notebooks
-
+- `utils.py` : Utility functions for various tasks.
+- `model_training.py` : Functions for training the model.
+- `model_evaluation.py` : Functions for evaluating the model.
+- `support_vector_machine.py` : Custom implementation of svm.
+- `data_preprocessing.py` : Functions for data preprocessing.
+- `data_exploration.py` : Functions for data exploration.
 - `data_exploration.ipynb`: Notebook for data exploration.
 - `data_preprocessing.ipynb`: Notebook for data preprocessing.
 - `model_training.ipynb`: Notebook for model training.
 - `model_evaluation.ipynb`: Notebook for model evaluation.
-
+  
 ## Dataset
 
-The dataset used is the Spam email Dataset. get the dataset using the fallowing link https://www.kaggle.com/datasets/jackksoncsie/spam-email-dataset
+The dataset used is the breast cancer Dataset. get the dataset using the fallowing link [https://www.kaggle.com/datasets/jackksoncsie/spam-email-dataset](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset)
 
 ## Model Performance
 
@@ -122,7 +71,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 
     ```bash
     git clone https://github.com/sadegh15khedry/ML-Algorithms-From-Scratch.git
-    cd ML-Algorithms-From-Scratch/Logestic-Regression
+    cd ML-Algorithms-From-Scratch/Support-Vector_Machines
     ```
 
 2. **Create the conda environment:**
@@ -134,7 +83,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 3. **Activate the conda environment:**
 
     ```bash
-    conda activate your-env-name
+    conda activate support-vector-machines
     ```
 
 4. **Verify the installation:**
@@ -146,14 +95,13 @@ To set up the project environment, use the `environment.yml` file to create a co
 
 ## Acknowledgments
 
-- This project is based AssemblyAI video on logestic regression implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=YYEJ_GUguHw&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=4)) to see their video on this project. 
+- This project is based AssemblyAI video on Support Vector Machine implementation from scratch. You can use the fallowing link ([AssemblyAI](https://www.youtube.com/watch?v=T9UcK-TxQGw&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=10) to see their video on this project. 
 - Special thanks to the developers and contributors the libraries used in this project, including NumPy, pandas, scikit-learn, Seaborn, and Matplotlib.
-- Huge thaks to contributors of the  Spam email Dataset.
+- Huge thaks to contributors of the breast cancer dataset.
 
 ## Further Improvements
 
 - Add hyperparameter tuning to optimize the model parameters.
-- Extend the evaluation metrics to include R^2 score and MAE (Mean Absolute Error).
 
   
 ## License
