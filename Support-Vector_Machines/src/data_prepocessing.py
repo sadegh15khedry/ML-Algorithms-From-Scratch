@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
-
+from sklearn.preprocessing import LabelEncoder
 
 def split_data(df, feature_column, label_column, test_size=.2, random_state=50):
     # x = df.drop(columns= [feature_column])
@@ -28,3 +28,11 @@ def normalize_data(df, method, normalization_columns):
         df = df.apply(lambda x: x / np.sqrt(np.sum(np.square(x))), axis=1)
     
     return df   
+
+def categorical_encode(df, columns):
+    for column in columns:
+        encoder = LabelEncoder()
+        encoder.fit(df[column])
+        df[column] = encoder.transform(df[column])
+        
+    return df
