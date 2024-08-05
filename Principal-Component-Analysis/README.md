@@ -1,4 +1,4 @@
-# Linear Regression From The Scratch
+# Principal Component Analysis From The Scratch
 
 ## Introduction
 
@@ -11,6 +11,7 @@ This project utilizes a Principal Component Analysis that has been built from th
 - [Files and Functions](#files-and-functions)
 - [Dataset](#dataset)
 - [Installation Guide](#installation-guide)
+- [Results](results)
 - [Acknowledgments](#acknowledgments)
 - [Further Improvements](#further-improvements)
 - [License](#license)
@@ -31,8 +32,7 @@ This project is focused on implementing a custom Principal Component Analysis an
 ├── notebooks
 │ ├── data_exploration.ipynb
 │ ├── data_preprocessing.ipynb
-│ ├── model_training.ipynb
-│ └── model_evaluation.ipynb
+│ └── principal_component_analysis.ipynb
 ├── models
 │ ├── model_custom.joblib
 │ └── model_sklearn.joblib
@@ -43,18 +43,15 @@ This project is focused on implementing a custom Principal Component Analysis an
 
 - `utils.py` : Utility functions for various tasks.
 - `model_training.py` : Functions for training the model.
-- `model_evaluation.py` : Functions for evaluating the model.
 - `principal_component_analysis.py` : Custom implementation of PCA.
 - `data_preprocessing.py` : Functions for data preprocessing.
 - `data_exploration.py` : Functions for data exploration.
 - `data_exploration.ipynb`: Notebook for data exploration.
 - `data_preprocessing.ipynb`: Notebook for data preprocessing.
-- `model_training.ipynb`: Notebook for model training.
-- `model_evaluation.ipynb`: Notebook for model evaluation.
 - `data_exploration.ipynb`: Notebook for data exploration.
 - `data_preprocessing.ipynb`: Notebook for data preprocessing.
-- `model_training.ipynb`: Notebook for model training.
-- `model_evaluation.ipynb`: Notebook for model evaluation.
+- `principal_component_analysis.ipynb`: Notebook for principal component analysis
+
 
 ## Dataset
 
@@ -89,6 +86,14 @@ To set up the project environment, use the `environment.yml` file to create a co
     ```bash
     python --version
     ```
+## Results 
+
+sklearn PCA:
+
+![sklearn_scatter_plot](https://github.com/user-attachments/assets/02ab8e6e-210e-4d98-b0b4-a70d4a9576a3)
+
+
+Cusom PCA:
 
 
 ## Acknowledgments
