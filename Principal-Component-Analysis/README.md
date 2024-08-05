@@ -104,7 +104,7 @@ Cusom PCA:
 - Huge thaks to  contributors of the  boston housing dataset.
 
 ## Further Improvements
-- parameters hupertuning for reachin better results.
+- parameters hupertuning for reaching better results.
 
   
 ## License
