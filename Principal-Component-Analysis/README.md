@@ -95,6 +95,8 @@ sklearn PCA:
 
 Cusom PCA:
 
+![custom_scatter_plot](https://github.com/user-attachments/assets/225f00d7-d5ff-4dfe-8876-90c87fa089f3)
+
 
 ## Acknowledgments
 - This project is based AssemblyAI video on PCA from scratch. You can use the fallowing link (https://www.youtube.com/watch?v=Rjr62b_h7S4&list=PLcWfeUsAys2k_xub3mHks85sBHZvg24Jd&index=8) to see their video on this project. 
