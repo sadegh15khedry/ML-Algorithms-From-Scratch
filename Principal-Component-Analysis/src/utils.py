@@ -40,3 +40,14 @@ def set_pandas_options():
     
 def get_error(y_train, y_pred_train):
     return mean_squared_error(y_train, y_pred_train)   
+
+
+
+def scatter(df, model_type):
+    # Scatter plot
+    plt.scatter(df[:, 0], df[:, 1])
+    plt.title('2D Array as Scatter Plot')
+    plt.xlabel('X-axis')
+    plt.ylabel('Y-axis')
+    plt.savefig('../results/'+model_type+'_scatter_plot.png')
+    plt.show()
