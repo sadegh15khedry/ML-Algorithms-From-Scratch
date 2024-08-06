@@ -141,7 +141,7 @@ To set up the project environment, use the `environment.yml` file to create a co
 3. **Activate the conda environment:**
 
     ```bash
-    conda activate your-env-name
+    conda activate linear-regression-scratch
     ```
 
 4. **Verify the installation:**
