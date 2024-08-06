@@ -61,6 +61,7 @@ def display_correlation_matrix_heatmap(title,correlation_matrix):
     plt.figure(figsize=(10, 8))
     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
     plt.title(title)
+    plt.savefig('../results/correlation_matrix_heatmap.png')
     plt.show()
 
 
