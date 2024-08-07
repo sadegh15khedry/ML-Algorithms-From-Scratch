@@ -57,7 +57,15 @@ https://www.kaggle.com/code/prasadperera/the-boston-housing-dataset
 
 ## Results
 
-This section will be added.
+sklearn model:
+
+![sklearn_result](https://github.com/user-attachments/assets/a16e84ce-d51c-4a13-8edd-940e884dd225)
+
+
+custom model:
+
+![custom_result](https://github.com/user-attachments/assets/0758c202-6906-4feb-b866-d924fc27d9c2)
+
 
 ## Installation Guide
 
