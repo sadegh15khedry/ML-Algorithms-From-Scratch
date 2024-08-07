@@ -1,5 +1,5 @@
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 from k_mean import CustomKMeans
 
 def get_cluster_model(df, k, model_type='custom'):
@@ -9,7 +9,7 @@ def get_cluster_model(df, k, model_type='custom'):
         return model
     elif model_type == 'custom':
         model = CustomKMeans(k)
-        model.fit(df)
+        # model.fit(df)
         return model
 
 def get_inertias_for_clustering(df):

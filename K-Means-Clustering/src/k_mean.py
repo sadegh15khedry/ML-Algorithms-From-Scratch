@@ -1,7 +1,7 @@
 import numpy as np
-from matplotlib.pyplot import pyplot as plt
+import matplotlib.pyplot as plt
 
-def euclidean_distance(self, sample, point):
+def euclidean_distance(sample, point):
         return np.sqrt(np.sum(sample - point))
 
 class CustomKMeans:
@@ -14,10 +14,11 @@ class CustomKMeans:
         
     def predict(self, x):
         self.x = x
+        self.x = self.x.to_numpy()
         self.n_samples , self.n_features = x.shape
         
-        random_sample_idxs = np.random.choice(self.n_samples, self.x, retplace=False)
-        self.centroids = [self.xp[idx] for idx in random_sample_idxs]
+        random_sample_idxs = np.random.choice(self.n_samples, self.k, replace=False)
+        self.centroids = [self.x[idx] for idx in random_sample_idxs]
         
         for _ in range(self.max_iter):
             self.clusters = self._create_clusters(self.centroids)
@@ -42,6 +43,8 @@ class CustomKMeans:
             clusters[centeroid_idx].append(idx)
         return clusters
     
+
+    
     def _closest_centroid(self, sample, centroids):
         distances = [euclidean_distance(sample, point) for point in centroids]
         closest_idx = np.argmin(distances)
@@ -50,8 +53,8 @@ class CustomKMeans:
     
     
     def _get_centroids(self, clusters):
-        centroids = np.zeros(self.k, self.n_features)
-        for cluster_idx, cluster in enumerate(cluster):
+        centroids = np.zeros((self.k, self.n_features))
+        for cluster_idx, cluster in enumerate(clusters):
             cluster_mean = np.mean(self.x[cluster], axis=0)
             centroids[cluster_idx] = cluster_mean
         return centroids
