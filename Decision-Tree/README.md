@@ -41,7 +41,7 @@ This project is focused on implementing a custom decision tree model and compari
 ├── environment.yml
 └── README.md
 ```
-## Files and Functions
+
 
 ## Files and Functions
 
